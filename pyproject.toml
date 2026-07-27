@@ -1,6 +1,6 @@
 [project]
 name = "cobalt-verify"
-version = "0.2.0"
+version = "0.3.0"
 description = "Offline verifier for Cobalt audit bundles — prove an agent-authority audit trail's integrity with nothing but the file."
 readme = "README.md"
 license = { text = "Apache-2.0" }

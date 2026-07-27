@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.3.0 — 2026-07-28
+
+### Added
+
+- **Authorship binding.** Safety-case bundles now carry an identity snapshot
+  (DID → public key, revoked identities included), so an offline auditor can
+  check that a receipt naming a DID was actually signed by that DID's key.
+  Results gain an `authorship` tally:
+
+  | key | meaning |
+  |---|---|
+  | `bound` | signed by the key registered to the DID it names |
+  | `unbound` | names a registered DID, signed by some other key |
+  | `unknown_did` | names a DID absent from the snapshot |
+  | `not_a_did` | free-form actor (a monitor, an adapter) — claims nothing |
+
+  Reported **separately from `valid`**: an unbound receipt means a weaker
+  signing era, not tampering. Receipts written before 2026-07-28 were all
+  signed with one shared key and report `unbound`.
+
+  The snapshot is covered by `sections_hash`, so adding a matching identity to
+  fake a binding breaks the bundle signature.
+
+
 ## 0.2.0 — 2026-07-28
 
 **Security release. 0.1.0 accepted forged bundles as valid — do not use it.**

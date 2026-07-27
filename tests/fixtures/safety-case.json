@@ -7,58 +7,81 @@
         "default_authority": "ActConfirm",
         "earn_back_n": null,
         "minor_authority": null,
-        "updated_at": "2026-07-27T19:17:27Z"
+        "updated_at": "2026-07-27T20:11:10Z"
+      }
+    ],
+    "identities": [
+      {
+        "age_tier": "adult",
+        "created_at": "2026-07-27T20:11:10Z",
+        "did": "did:cobalt:site/safety-plc#key-1",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAZJCrDQNnSbD3qeXWBkBsoHaP3QEU1En02n6uuciWTNQ=\n-----END PUBLIC KEY-----\n",
+        "revoked_at": null
+      },
+      {
+        "age_tier": "adult",
+        "created_at": "2026-07-27T20:11:10Z",
+        "did": "did:cobalt:site/arm-01#key-1",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAYKc4d9A2ntBrnq4I52bvpwnkzZ/WXGrYDvUU72Oruz4=\n-----END PUBLIC KEY-----\n",
+        "revoked_at": null
+      },
+      {
+        "age_tier": "adult",
+        "created_at": "2026-07-27T20:11:10Z",
+        "did": "did:cobalt:site/supervisor#key-1",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEANy0OSFOnPLb28KBw0WvUYZVTZZMKZRz3B5BBT+mbq8I=\n-----END PUBLIC KEY-----\n",
+        "revoked_at": null
       }
     ],
     "zone_policies": [
       {
         "authority": "Autonomous",
         "capability": "Arm.move",
-        "updated_at": "2026-07-27T19:17:27Z",
+        "updated_at": "2026-07-27T20:11:10Z",
         "zone": "test-cell"
       }
     ]
   },
-  "bundle_signature": "22758a594b7fd820e5383451740c44a2e719a92cb673ab686f146d895074cf5c213f725d1dfdf5ed744586f99d44f65dd22f4e7f3b4254a72a51a903a813ee0b",
+  "bundle_signature": "26ccaf5309c23e3f0d49ed1edda5d35dcff83202e7acc820e98a76496eff20d92b46d6c0b62a86040ad932e3f8e6e16ab5e98cb1cd1beaab2edcbfd45684f10c",
   "format_version": 3,
   "ledger": [
     {
       "capability": "Arm.move",
-      "corrected_receipt_id": "1785179847010-6d9de37396b44a58",
-      "correction_id": "eb4521039ddd41f9af097cfd9bd7da9b",
+      "corrected_receipt_id": "1785183070643-59507149b67f4c56",
+      "correction_id": "3f8abe96fc2c435583d8fc34d874a480",
       "kind": "trip",
       "new_default_authority": "ActConfirm",
       "new_minor_authority": null,
       "old_default_authority": "Autonomous",
       "old_minor_authority": null,
       "reason": "curtain breach",
-      "recorded_at": "2026-07-27T19:17:27Z",
+      "recorded_at": "2026-07-27T20:11:10Z",
       "zone": "test-cell"
     },
     {
       "capability": "Arm.move",
-      "corrected_receipt_id": "1785179847010-60ba73352b3947d2",
-      "correction_id": "4836e9f35d7e46819d3b8c2a327b0b68",
+      "corrected_receipt_id": "1785183070644-3c6b2814efa64ea1",
+      "correction_id": "87775c92a30d4491a9377bdfb9de58e5",
       "kind": "earn_back",
       "new_default_authority": "Autonomous",
       "new_minor_authority": null,
       "old_default_authority": "ActConfirm",
       "old_minor_authority": null,
       "reason": "root cause fixed",
-      "recorded_at": "2026-07-27T19:17:27Z",
+      "recorded_at": "2026-07-27T20:11:10Z",
       "zone": "test-cell"
     }
   ],
   "metadata": {
-    "generated_at": "2026-07-27T19:17:27Z",
+    "generated_at": "2026-07-27T20:11:10Z",
     "ledger_count": 2,
-    "merkle_root": "c44615ba46078508359341047b54f509edadd25036eec07a3e12a946be368d7e",
+    "merkle_root": "df2abc6f905f749558024e27355c1ef0aff2a8417ede660c12b305a3103c4dd8",
     "period_end": "",
     "period_start": "",
     "profile": "safety-case",
     "receipt_count": 5,
-    "receipts_hash": "0e97c2e50d4a7214139be35fe8d9d9c8feee873dd85a51190b4a7c2f4c61a3d4",
-    "sections_hash": "add0dd07947fd332fe343c1ac900294530179f996cbc038032b2bb1bc5e34197",
+    "receipts_hash": "f69c1563c9e5ba6ef80ed2de56672f55a6c0615b3592d8acf0aea3ca5d9be864",
+    "sections_hash": "540399a2b2869c4e0bfbd3c6cb76990442d8be39cd06945338ea9f5c7239a7c9",
     "signing_did": "did:cobalt:site/safety-plc#key-1",
     "tenant_did": "did:cobalt:site/safety-plc#key-1",
     "usage_count": 0,
@@ -72,12 +95,12 @@
       "actor_model_provider": null,
       "authority_level": "Autonomous",
       "capability": "Arm.move",
-      "completed_at": "2026-07-27T19:17:27Z",
+      "completed_at": "2026-07-27T20:11:10Z",
       "counterparties": [],
       "inputs_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
       "metadata": {
         "kernel": {
-          "grant_id": "6e4363e0293c472180372198435570c4",
+          "grant_id": "1c01710b79ab450cb745a1ce1a49ab4d",
           "reason": null,
           "type": "decision",
           "verdict": "allow",
@@ -86,10 +109,10 @@
       },
       "outputs_hash": "d227148b98388bc7308ced08c137356ccded1b4a29eac6e070e31839627f40d8",
       "parent_receipt_id": null,
-      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEArDg/s2v55CbBzGSI6kJ0wvI0BRwmI99y9cnopZTF0Bs=\n-----END PUBLIC KEY-----\n",
-      "receipt_id": "1785179847008-d649185bd18c4373",
-      "signature": "4e9117b9ba2caaa4cdf86ba3d63792ef5f829c9dc0135ed31a045bda14a7a7753e34f80d8cb801ab6d3c58e5f47102c12341509367aa6ec336900f6dd501f903",
-      "started_at": "2026-07-27T19:17:27Z"
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAYKc4d9A2ntBrnq4I52bvpwnkzZ/WXGrYDvUU72Oruz4=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785183070642-7f650c33f77f4527",
+      "signature": "ec69c3b0a149f8b2657b736a8f8aa60f5176987bfe86055afc3eac9385abd49d3da2f8a0819cf001b4f2fe7ad74ab3bfe2fd9aeabe94781baeea83a4c551fb02",
+      "started_at": "2026-07-27T20:11:10Z"
     },
     {
       "actor_did": "did:cobalt:site/arm-01#key-1",
@@ -97,9 +120,9 @@
       "actor_model_provider": null,
       "authority_level": "Autonomous",
       "capability": "Arm.move",
-      "completed_at": "2026-07-27T19:17:27Z",
+      "completed_at": "2026-07-27T20:11:10Z",
       "counterparties": [],
-      "inputs_hash": "b05e390af506d96b563e5ba93d41254ca0d9f92181c2cd9bc1f0add7258a5fe1",
+      "inputs_hash": "f9bf7585012e2b3563a97fea1132db9d1ba4bdb7c2a8ecdbc210a5b134f5217b",
       "metadata": {
         "kernel": {
           "status": "completed",
@@ -108,11 +131,11 @@
         }
       },
       "outputs_hash": "d0765f73cd5d1df39be353d538ea7c47a017d66a8bd001dc4707240dbb71e58c",
-      "parent_receipt_id": "1785179847008-d649185bd18c4373",
-      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEArDg/s2v55CbBzGSI6kJ0wvI0BRwmI99y9cnopZTF0Bs=\n-----END PUBLIC KEY-----\n",
-      "receipt_id": "1785179847009-e2627015813d44a9",
-      "signature": "60de86f245f65ca2899930f852e70e9b6a5166eaff71ec15ca93aec7c1bead37f975ecbc191253379407d84486b2ef0d12708d90499a12b316ffe18e2e40150f",
-      "started_at": "2026-07-27T19:17:27Z"
+      "parent_receipt_id": "1785183070642-7f650c33f77f4527",
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAYKc4d9A2ntBrnq4I52bvpwnkzZ/WXGrYDvUU72Oruz4=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785183070642-df0eaace1ea54f9e",
+      "signature": "5ec5ee7063abb60648fecb1547f44ee10050902f3069df47284928178766e5baca976f0b5ef30c942c0997041a38d9528b36923f7c77cea96a1bd2c4d7c9e900",
+      "started_at": "2026-07-27T20:11:10Z"
     },
     {
       "actor_did": "did:cobalt:site/arm-01#key-1",
@@ -120,12 +143,12 @@
       "actor_model_provider": null,
       "authority_level": "Read",
       "capability": "Arm.move",
-      "completed_at": "2026-07-27T19:17:27Z",
+      "completed_at": "2026-07-27T20:11:10Z",
       "counterparties": [],
       "inputs_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
       "metadata": {
         "kernel": {
-          "grant_id": "6e4363e0293c472180372198435570c4",
+          "grant_id": "1c01710b79ab450cb745a1ce1a49ab4d",
           "reason": "authority rung Read does not permit execution",
           "type": "decision",
           "verdict": "deny",
@@ -134,10 +157,10 @@
       },
       "outputs_hash": "7cf545ab2440ef94d12a3f7af862c2491c8b5aa9ffa48869f93833568f431448",
       "parent_receipt_id": null,
-      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEArDg/s2v55CbBzGSI6kJ0wvI0BRwmI99y9cnopZTF0Bs=\n-----END PUBLIC KEY-----\n",
-      "receipt_id": "1785179847009-41aa8b07061045ea",
-      "signature": "4611b211e848a63dc35092d5b344c23633f5e5fe0af24e87324274f264f6a5b2bb92a56750b8cafaca762efed79c1b78b1769ceba4989ac111afd1346032fd03",
-      "started_at": "2026-07-27T19:17:27Z"
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAYKc4d9A2ntBrnq4I52bvpwnkzZ/WXGrYDvUU72Oruz4=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785183070643-3faea88c89bf4c52",
+      "signature": "db127b11a8c005d6c468972f8a526832b5764d008446fbb5f898cdf4924de2ac81760d5cfd4ea5ba11dae51567bdef427bddfcf90076100daa12183e2b1bea0f",
+      "started_at": "2026-07-27T20:11:10Z"
     },
     {
       "actor_did": "monitor:light-curtain",
@@ -145,9 +168,9 @@
       "actor_model_provider": null,
       "authority_level": "Read",
       "capability": "Arm.move",
-      "completed_at": "2026-07-27T19:17:27Z",
+      "completed_at": "2026-07-27T20:11:10Z",
       "counterparties": [],
-      "inputs_hash": "030ee460044b748b4c3df3efcccad8974793ac386d660177004a1a1032d37eb9",
+      "inputs_hash": "08142a12372d0e273c615060ff36602cbb3c9af01f31ac9bd4cbeb9268d8f597",
       "metadata": {
         "kernel": {
           "monitor": "monitor:light-curtain",
@@ -157,11 +180,11 @@
         }
       },
       "outputs_hash": "57db039308745c61c7298babb4256af96a768906cd8f15f85d171796ae9bcf34",
-      "parent_receipt_id": "1785179847008-d649185bd18c4373",
-      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEArDg/s2v55CbBzGSI6kJ0wvI0BRwmI99y9cnopZTF0Bs=\n-----END PUBLIC KEY-----\n",
-      "receipt_id": "1785179847010-6d9de37396b44a58",
-      "signature": "c6466c0768dd301d43ada7ecbeb0078f4ada30c7dedcc7beea5359219ceb66ee534a5995ce09403e8c64f6398b058f0d9470fea5b7b8d2098765262a4f99f400",
-      "started_at": "2026-07-27T19:17:27Z"
+      "parent_receipt_id": "1785183070642-7f650c33f77f4527",
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAsBdDFSSbWePW2PtkKM5iADjuzXvK1waUZfdMwxjPvTw=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785183070643-59507149b67f4c56",
+      "signature": "946d7ab5a408ace1908ba7077e8822c00f927c33de0ce44113cffbef1eaed1a2e9c7bf8c4599c02f8961c2f9ce3ef1467a98c124e1b5623070addbd8226b890f",
+      "started_at": "2026-07-27T20:11:10Z"
     },
     {
       "actor_did": "did:cobalt:site/supervisor#key-1",
@@ -169,7 +192,7 @@
       "actor_model_provider": null,
       "authority_level": "ActConfirm",
       "capability": "Arm.move",
-      "completed_at": "2026-07-27T19:17:27Z",
+      "completed_at": "2026-07-27T20:11:10Z",
       "counterparties": [],
       "inputs_hash": "d357af5bb370317b8db9f0f56699cb98243c1f51ea043f4a6c44356f5704396a",
       "metadata": {
@@ -181,14 +204,14 @@
       },
       "outputs_hash": "8e51b62f24ec2de9d798a5a760d0263d51033bee30226040bb2b83d0653eed59",
       "parent_receipt_id": null,
-      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEArDg/s2v55CbBzGSI6kJ0wvI0BRwmI99y9cnopZTF0Bs=\n-----END PUBLIC KEY-----\n",
-      "receipt_id": "1785179847010-60ba73352b3947d2",
-      "signature": "a7fc07152a9181bc65ff1b38b3d9dab5f4028a657b023227da62992c4430856dd927d61d4a9231724a354261de4852fa0c77d0f713b57f20a507414afeb63907",
-      "started_at": "2026-07-27T19:17:27Z"
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEANy0OSFOnPLb28KBw0WvUYZVTZZMKZRz3B5BBT+mbq8I=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785183070644-3c6b2814efa64ea1",
+      "signature": "c148d4ec962c351c266cf1600312c237ff1043048a7d51e7d9ab685ed805ebb90ab34c7326c8b0083001dfa2c48b7ac27bf8137493b1fbbcf09ddd0ba1913d0a",
+      "started_at": "2026-07-27T20:11:10Z"
     }
   ],
   "signing_did": "did:cobalt:site/safety-plc#key-1",
-  "signing_public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAQgRkoQRQ3CZgWKuTw54hZ2O0An41fZMA3zL+NOYwZtI=\n-----END PUBLIC KEY-----\n",
+  "signing_public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAZJCrDQNnSbD3qeXWBkBsoHaP3QEU1En02n6uuciWTNQ=\n-----END PUBLIC KEY-----\n",
   "summary": {
     "confirmations": 0,
     "decisions": {
@@ -198,23 +221,23 @@
     },
     "denials": [
       {
-        "at": "2026-07-27T19:17:27Z",
+        "at": "2026-07-27T20:11:10Z",
         "capability": "Arm.move",
         "reason": "authority rung Read does not permit execution",
-        "receipt_id": "1785179847009-41aa8b07061045ea",
+        "receipt_id": "1785183070643-3faea88c89bf4c52",
         "zone": "unknown-zone"
       }
     ],
     "movements": [
       {
-        "at": "2026-07-27T19:17:27Z",
+        "at": "2026-07-27T20:11:10Z",
         "capability": "Arm.move",
         "change": "Autonomous \u2192 ActConfirm",
         "kind": "trip",
         "zone": "test-cell"
       },
       {
-        "at": "2026-07-27T19:17:27Z",
+        "at": "2026-07-27T20:11:10Z",
         "capability": "Arm.move",
         "change": "ActConfirm \u2192 Autonomous",
         "kind": "earn_back",
@@ -228,11 +251,11 @@
     },
     "trips": [
       {
-        "at": "2026-07-27T19:17:27Z",
+        "at": "2026-07-27T20:11:10Z",
         "capability": "Arm.move",
         "monitor": "monitor:light-curtain",
         "reason": "curtain breach",
-        "receipt_id": "1785179847010-6d9de37396b44a58",
+        "receipt_id": "1785183070643-59507149b67f4c56",
         "zone": "test-cell"
       }
     ]

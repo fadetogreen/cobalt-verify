@@ -269,10 +269,41 @@ def verify_bundle(
             "usage_records": len(usage),
             "ledger_rows": len(ledger),
         },
+        "authorship": _authorship_tally(
+            receipts, (bundle.get("authority_snapshot") or {}).get("identities")
+        ),
     }
     if bundle.get("summary") is not None:
         result["summary"] = bundle["summary"]
     return result
+
+
+def _authorship_tally(receipts: list, identities: list | None) -> dict:
+    """How many receipts are bound to the actor DID they name.
+
+    A receipt signature proves the bytes match the attached key. Binding proves
+    that key belongs to the named actor, checked against the identity snapshot
+    the bundle carries. Reported separately from `valid`: an unbound receipt
+    means a weaker signing era, not tampering.
+    """
+    tally = {"bound": 0, "unbound": 0, "unknown_did": 0, "not_a_did": 0}
+    by_did = {i["did"]: i for i in (identities or [])}
+    for r in receipts:
+        actor = r.get("actor_did", "")
+        if not actor.startswith("did:cobalt:"):
+            tally["not_a_did"] += 1
+            continue
+        if identities is None:
+            tally["unknown_did"] += 1
+            continue
+        ident = by_did.get(actor)
+        if ident is None:
+            tally["unknown_did"] += 1
+            continue
+        a = (ident.get("public_key") or "").strip()
+        b = (r.get("public_key") or "").strip()
+        tally["bound" if a and a == b else "unbound"] += 1
+    return tally
 
 
 def verify_bundle_file(

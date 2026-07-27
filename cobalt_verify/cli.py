@@ -69,6 +69,15 @@ def main(argv: list[str] | None = None) -> int:
             print("  consistent, but anyone can generate a key and produce a")
             print("  consistent bundle. Re-run with --signer-key to prove who")
             print("  signed it.")
+        a = result.get("authorship") or {}
+        if any(a.values()):
+            print(f"  authorship: {a.get('bound', 0)} bound, "
+                  f"{a.get('unbound', 0)} unbound, "
+                  f"{a.get('unknown_did', 0)} unknown DID, "
+                  f"{a.get('not_a_did', 0)} unattributed")
+            if a.get("unbound"):
+                print("    NOTE: unbound receipts name a registered DID but were")
+                print("    signed by a different key — they do not prove authorship.")
         s = result.get("summary")
         if s:
             d = s.get("decisions", {})

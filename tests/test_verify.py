@@ -225,3 +225,44 @@ def test_cli_rejects_forgery_against_pinned_key(tmp_path, capsys):
 def test_cli_missing_file(tmp_path, capsys):
     assert main([str(tmp_path / "nope.json")]) == 1
     assert "no such file" in capsys.readouterr().err
+
+
+# ---------------------------------------------------------------------------
+# Authorship binding (per-actor keys)
+# ---------------------------------------------------------------------------
+
+def test_authorship_tally_present_and_bound(bundle, signer):
+    """Receipts naming a registered DID must be signed by THAT DID's key."""
+    result = verify_bundle(bundle, trusted_signer_key=signer)
+    a = result["authorship"]
+    assert a["bound"] > 0, a
+    assert a["unbound"] == 0, a
+
+
+def test_forged_receipt_key_shows_as_unbound(bundle, signer):
+    """A receipt re-keyed to an attacker's key is caught as unbound.
+
+    (It also breaks the signature and hashes — this asserts the identity
+    binding specifically, which is the layer that answers "who wrote this".)
+    """
+    b = copy.deepcopy(bundle)
+    priv = Ed25519PrivateKey.generate()
+    pubpem = priv.public_key().public_bytes(
+        Encoding.PEM, PublicFormat.SubjectPublicKeyInfo).decode()
+    target = next(r for r in b["receipts"] if r["actor_did"].startswith("did:cobalt:"))
+    target["public_key"] = pubpem
+    target["signature"] = priv.sign(_canonical_receipt_payload(target)).hex()
+    result = verify_bundle(b, trusted_signer_key=signer)
+    assert result["authorship"]["unbound"] >= 1
+    assert result["valid"] is False   # hashes still catch the edit
+
+
+def test_authorship_cannot_be_faked_by_adding_an_identity(bundle, signer):
+    """Injecting a matching identity into the snapshot breaks sections_hash."""
+    b = copy.deepcopy(bundle)
+    b["authority_snapshot"]["identities"].append(
+        {"did": "did:cobalt:evil/actor#key-1", "public_key": "x",
+         "age_tier": "adult", "created_at": "2020-01-01T00:00:00Z", "revoked_at": None})
+    result = verify_bundle(b, trusted_signer_key=signer)
+    assert result["valid"] is False
+    assert any("Sections hash" in e for e in result["errors"])
