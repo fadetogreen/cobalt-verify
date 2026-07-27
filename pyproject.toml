@@ -5,9 +5,22 @@ description = "Offline verifier for Cobalt audit bundles — prove an agent-auth
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.10"
+authors = [{ name = "fadetogreen" }]
+keywords = ["audit", "verification", "ed25519", "merkle", "agent-safety", "compliance", "robotics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security :: Cryptography",
+]
 dependencies = [
     "cryptography>=42.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/fadetogreen/cobalt-verify"
+Issues = "https://github.com/fadetogreen/cobalt-verify/issues"
 
 [project.scripts]
 cobalt-verify = "cobalt_verify.cli:main"

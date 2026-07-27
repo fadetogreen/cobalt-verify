@@ -1,0 +1,27 @@
+name: publish
+
+# Publishes to PyPI via Trusted Publishing (OIDC — no stored token).
+# Fires when a GitHub Release is published. One-time PyPI-side setup:
+# pypi.org → Account → Publishing → add pending publisher for project
+# "cobalt-verify", owner "fadetogreen", repo "cobalt-verify",
+# workflow "publish.yml", environment "pypi".
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
