@@ -37,3 +37,9 @@ testpaths = ["tests"]
 
 [tool.ruff]
 target-version = "py310"
+
+[tool.ruff.lint]
+# BLE001: the verifier deliberately catches everything at check boundaries —
+# any failure (bad key, bad hex, bad signature, malformed field) must count
+# as INVALID, never crash the audit.
+ignore = ["BLE001"]
