@@ -1,0 +1,238 @@
+{
+  "authority_snapshot": {
+    "capability_policies": [
+      {
+        "auto_demote_on_correction": 1,
+        "capability": "Arm.move",
+        "default_authority": "ActConfirm",
+        "earn_back_n": null,
+        "minor_authority": null,
+        "updated_at": "2026-07-27T18:01:47Z"
+      }
+    ],
+    "zone_policies": [
+      {
+        "authority": "Autonomous",
+        "capability": "Arm.move",
+        "updated_at": "2026-07-27T18:01:47Z",
+        "zone": "test-cell"
+      }
+    ]
+  },
+  "bundle_signature": "58bd8b39de828c6bdf753a5ba9f3ffd3ca886375d189f3be76b4964fe25ce2ca5467961b59b8fba8b15e046bf1a3d7b109fd92df725519f69754d39bdcec030d",
+  "format_version": 2,
+  "ledger": [
+    {
+      "capability": "Arm.move",
+      "corrected_receipt_id": "1785175307231-9e155e1edff241eb",
+      "correction_id": "22b3b7f841594696b7d801fa0be5f244",
+      "kind": "trip",
+      "new_default_authority": "ActConfirm",
+      "new_minor_authority": null,
+      "old_default_authority": "Autonomous",
+      "old_minor_authority": null,
+      "reason": "curtain breach",
+      "recorded_at": "2026-07-27T18:01:47Z",
+      "zone": "test-cell"
+    },
+    {
+      "capability": "Arm.move",
+      "corrected_receipt_id": "1785175307232-116503ebf2644a1e",
+      "correction_id": "b00ad8e5f3ab4f73b9f82ff9a66f540c",
+      "kind": "earn_back",
+      "new_default_authority": "Autonomous",
+      "new_minor_authority": null,
+      "old_default_authority": "ActConfirm",
+      "old_minor_authority": null,
+      "reason": "root cause fixed",
+      "recorded_at": "2026-07-27T18:01:47Z",
+      "zone": "test-cell"
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-07-27T18:01:47Z",
+    "ledger_count": 2,
+    "merkle_root": "d65a62c8265c36a35e7d6abfe400d6ecdb3df5d79100915408a35cbf4fb478aa",
+    "period_end": "",
+    "period_start": "",
+    "profile": "safety-case",
+    "receipt_count": 5,
+    "sections_hash": "ed1b39dfa9b3ef033326662b66a13869536875d1de3d0c1c79be0e68a5c2a49e",
+    "tenant_did": "did:cobalt:site/safety-plc#key-1",
+    "usage_count": 0
+  },
+  "profile": "safety-case",
+  "receipts": [
+    {
+      "actor_did": "did:cobalt:site/arm-01#key-1",
+      "actor_model": null,
+      "actor_model_provider": null,
+      "authority_level": "Autonomous",
+      "capability": "Arm.move",
+      "completed_at": "2026-07-27T18:01:47Z",
+      "counterparties": [],
+      "inputs_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "metadata": {
+        "kernel": {
+          "grant_id": "06b79e3a16c04d5ea410015c4100271c",
+          "reason": null,
+          "type": "decision",
+          "verdict": "allow",
+          "zone": "test-cell"
+        }
+      },
+      "outputs_hash": "d227148b98388bc7308ced08c137356ccded1b4a29eac6e070e31839627f40d8",
+      "parent_receipt_id": null,
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2cFZBKPfjxv9cDjwxer0b/NZtUNobFMUMdwvA8Ttiyk=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785175307230-9cd7939390e74197",
+      "signature": "ec82890a7547e15d72f327a765aedc84936754e2d833c75f024c8be51bb728b9ca733be8b84de33824ee2db33d673b648efe9d40a1139a8b5ec4217a14fd1b00",
+      "started_at": "2026-07-27T18:01:47Z"
+    },
+    {
+      "actor_did": "did:cobalt:site/arm-01#key-1",
+      "actor_model": null,
+      "actor_model_provider": null,
+      "authority_level": "Autonomous",
+      "capability": "Arm.move",
+      "completed_at": "2026-07-27T18:01:47Z",
+      "counterparties": [],
+      "inputs_hash": "e93b15db2cd6a59a11fe883640a74ef91d34261ef3b5652aa3ed7be652ef5696",
+      "metadata": {
+        "kernel": {
+          "status": "completed",
+          "type": "outcome",
+          "zone": "test-cell"
+        }
+      },
+      "outputs_hash": "d0765f73cd5d1df39be353d538ea7c47a017d66a8bd001dc4707240dbb71e58c",
+      "parent_receipt_id": "1785175307230-9cd7939390e74197",
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2cFZBKPfjxv9cDjwxer0b/NZtUNobFMUMdwvA8Ttiyk=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785175307231-732932554ed44a33",
+      "signature": "fd8e5f72b0a552398bd8737968257848fdc7d5415a8d952cf1f94ec19599fb88a9d61acf3d3acb8ccecaec06d493892e3fe2d88915f165eb8d1b582ae2779a09",
+      "started_at": "2026-07-27T18:01:47Z"
+    },
+    {
+      "actor_did": "did:cobalt:site/arm-01#key-1",
+      "actor_model": null,
+      "actor_model_provider": null,
+      "authority_level": "Read",
+      "capability": "Arm.move",
+      "completed_at": "2026-07-27T18:01:47Z",
+      "counterparties": [],
+      "inputs_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "metadata": {
+        "kernel": {
+          "grant_id": "06b79e3a16c04d5ea410015c4100271c",
+          "reason": "authority rung Read does not permit execution",
+          "type": "decision",
+          "verdict": "deny",
+          "zone": "unknown-zone"
+        }
+      },
+      "outputs_hash": "7cf545ab2440ef94d12a3f7af862c2491c8b5aa9ffa48869f93833568f431448",
+      "parent_receipt_id": null,
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2cFZBKPfjxv9cDjwxer0b/NZtUNobFMUMdwvA8Ttiyk=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785175307231-742b25017866487a",
+      "signature": "585b6fa4251516aa94cc8b937da12a494b51f15d54d3316bcc5e2dd5b715fedc5a271d07a1ed865de9f514b6363b0264f4803ce2884a9d7dd87840de45f8fc0e",
+      "started_at": "2026-07-27T18:01:47Z"
+    },
+    {
+      "actor_did": "monitor:light-curtain",
+      "actor_model": null,
+      "actor_model_provider": null,
+      "authority_level": "Read",
+      "capability": "Arm.move",
+      "completed_at": "2026-07-27T18:01:47Z",
+      "counterparties": [],
+      "inputs_hash": "471a886ef118f76714ede3d93411d303f93f0033c00a1dfeb67ec34a6e9217f3",
+      "metadata": {
+        "kernel": {
+          "monitor": "monitor:light-curtain",
+          "reason": "curtain breach",
+          "type": "trip",
+          "zone": "test-cell"
+        }
+      },
+      "outputs_hash": "57db039308745c61c7298babb4256af96a768906cd8f15f85d171796ae9bcf34",
+      "parent_receipt_id": "1785175307230-9cd7939390e74197",
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2cFZBKPfjxv9cDjwxer0b/NZtUNobFMUMdwvA8Ttiyk=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785175307231-9e155e1edff241eb",
+      "signature": "a8bdb25f018a8788ed4c03e986d0f25f10dc188a454483d40cfa42bc58a21bcf86ffcaf5a5feb92bd67342fa3a0343e46241c85e706885a5ff6b3a68b1791b0c",
+      "started_at": "2026-07-27T18:01:47Z"
+    },
+    {
+      "actor_did": "did:cobalt:site/supervisor#key-1",
+      "actor_model": null,
+      "actor_model_provider": null,
+      "authority_level": "ActConfirm",
+      "capability": "Arm.move",
+      "completed_at": "2026-07-27T18:01:47Z",
+      "counterparties": [],
+      "inputs_hash": "d357af5bb370317b8db9f0f56699cb98243c1f51ea043f4a6c44356f5704396a",
+      "metadata": {
+        "kernel": {
+          "note": "root cause fixed",
+          "type": "earn_back_signoff",
+          "zone": "test-cell"
+        }
+      },
+      "outputs_hash": "8e51b62f24ec2de9d798a5a760d0263d51033bee30226040bb2b83d0653eed59",
+      "parent_receipt_id": null,
+      "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA2cFZBKPfjxv9cDjwxer0b/NZtUNobFMUMdwvA8Ttiyk=\n-----END PUBLIC KEY-----\n",
+      "receipt_id": "1785175307232-116503ebf2644a1e",
+      "signature": "09415b671102e17cd6186157b6f243d6d9bc596de1ff02cf9e3951bd1c2685ea706d42d4642af81206545fa1b4e076283e56d81a128ab1bc2cb61a0a13ee8f04",
+      "started_at": "2026-07-27T18:01:47Z"
+    }
+  ],
+  "signing_did": "did:cobalt:site/safety-plc#key-1",
+  "signing_public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAQ5Ya7MmzJa8PhmatE4sSWyH7LhgRYfsfvPuAfUjBPQc=\n-----END PUBLIC KEY-----\n",
+  "summary": {
+    "confirmations": 0,
+    "decisions": {
+      "allow": 1,
+      "confirm": 0,
+      "deny": 1
+    },
+    "denials": [
+      {
+        "at": "2026-07-27T18:01:47Z",
+        "capability": "Arm.move",
+        "reason": "authority rung Read does not permit execution",
+        "receipt_id": "1785175307231-742b25017866487a",
+        "zone": "unknown-zone"
+      }
+    ],
+    "movements": [
+      {
+        "at": "2026-07-27T18:01:47Z",
+        "capability": "Arm.move",
+        "change": "Autonomous \u2192 ActConfirm",
+        "kind": "trip",
+        "zone": "test-cell"
+      },
+      {
+        "at": "2026-07-27T18:01:47Z",
+        "capability": "Arm.move",
+        "change": "ActConfirm \u2192 Autonomous",
+        "kind": "earn_back",
+        "zone": "test-cell"
+      }
+    ],
+    "outcomes": {
+      "aborted": 0,
+      "completed": 1,
+      "tripped": 0
+    },
+    "trips": [
+      {
+        "at": "2026-07-27T18:01:47Z",
+        "capability": "Arm.move",
+        "monitor": "monitor:light-curtain",
+        "reason": "curtain breach",
+        "receipt_id": "1785175307231-9e155e1edff241eb",
+        "zone": "test-cell"
+      }
+    ]
+  },
+  "usage_records": []
+}
