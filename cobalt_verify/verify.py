@@ -287,21 +287,32 @@ def _authorship_tally(receipts: list, identities: list | None) -> dict:
     means a weaker signing era, not tampering.
     """
     tally = {"bound": 0, "unbound": 0, "unknown_did": 0, "not_a_did": 0}
-    by_did = {i["did"]: i for i in (identities or [])}
+    by_did = {}
+    for i in identities or []:
+        if isinstance(i, dict) and isinstance(i.get("did"), str):
+            by_did[i["did"]] = i
     for r in receipts:
+        # Bundle JSON may be hostile or malformed. Every branch below must
+        # yield a tally entry, never an exception — an auditor needs INVALID,
+        # not a traceback.
+        if not isinstance(r, dict):
+            tally["not_a_did"] += 1
+            continue
         actor = r.get("actor_did", "")
-        if not actor.startswith("did:cobalt:"):
+        if not isinstance(actor, str) or not actor.startswith("did:cobalt:"):
             tally["not_a_did"] += 1
             continue
         if identities is None:
             tally["unknown_did"] += 1
             continue
         ident = by_did.get(actor)
-        if ident is None:
+        if not isinstance(ident, dict):
             tally["unknown_did"] += 1
             continue
-        a = (ident.get("public_key") or "").strip()
-        b = (r.get("public_key") or "").strip()
+        a = ident.get("public_key")
+        a = a.strip() if isinstance(a, str) else ""
+        b = r.get("public_key")
+        b = b.strip() if isinstance(b, str) else ""
         tally["bound" if a and a == b else "unbound"] += 1
     return tally
 
