@@ -161,9 +161,11 @@ def verify_bundle(
         return {
             "valid": False, "signer_trusted": False, "counts": {},
             "errors": [
-                f"format_version {version} is REJECTED: known forgery weaknesses "
-                f"(odd-leaf merkle duplication, unenforced counts, unsigned "
-                f"sections). Re-export as v{SUPPORTED_FORMAT}."
+                (
+                    f"format_version {version} is REJECTED: known forgery weaknesses "
+                    f"(odd-leaf merkle duplication, unenforced counts, unsigned "
+                    f"sections). Re-export as v{SUPPORTED_FORMAT}."
+                )
             ],
         }
     if version != SUPPORTED_FORMAT and not (version in LEGACY_FORMATS and allow_insecure_legacy):
