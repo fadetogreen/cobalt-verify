@@ -83,6 +83,33 @@ assert result["valid"] and result["signer_trusted"]
 | 7 | Bundle signature | all of the above, as one signed unit |
 | 8 | Signer identity, when `--signer-key` is given | **authorship** |
 
+## What a verdict proves, and what it does not
+
+`VERIFIED` proves exactly two things:
+
+- **Signer authenticity.** The bundle was signed by the key you supplied out of
+  band, and (safety-case profile) each receipt by the key its DID is bound to in
+  the identity snapshot.
+- **Internal consistency.** Nothing in the file was added, removed or altered
+  after signing: every receipt signature, the merkle root, the section hashes,
+  the counts and the envelope agree with each other.
+
+It does **not** prove:
+
+- **Event completeness.** The bundle holds what the signer's seam saw and
+  recorded. A physical event that never reached the seam, or happened while the
+  seam was down, leaves no trace here. The absence of a receipt is not evidence
+  that nothing happened.
+- **Outcome truth.** A `completed` outcome means the controller reported success
+  to the seam and the seam signed that report. Whether the machine actually did
+  what the controller said is a question for the controller's own logs and the
+  safety PLC, not for this tool.
+
+In one line: this tool tells an auditor the record is authentic and unaltered.
+Whether the record is a complete and faithful account of the machine is a
+question about the deployment, answered by linking it to the controller and
+safety-PLC logs.
+
 ## Bundle format
 
 **v3** — one envelope, two profiles: `standard` (receipts + usage) and
